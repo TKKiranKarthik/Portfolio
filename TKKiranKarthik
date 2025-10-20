@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiran Karthik - Mechanical Engineer Portfolio</title>
+    <title>T. K. Kiran Karthik - Mechanical Engineer Portfolio</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -138,7 +138,7 @@
         <div class="container">
             <h1>T. K. KIRAN KARTHIK</h1>
             <p>
-                **Mechanical Engineer** | Expert in **Additive Manufacturing** & **Product Innovation**
+                **Mechanical Engineer** | **Designer** | **3D Printing Specialist**
             </p>
             <a href="#contact" class="cta-button">LET'S CONNECT</a>
         </div>
@@ -147,85 +147,5 @@
     <div class="container main-content">
 
         <section id="about">
-            <h2>About Me</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-                A highly driven Mechanical Engineer specializing in taking concepts from theoretical design to **manufacturable reality**. My passion lies in leveraging advanced tools like **3D Printing** and **Finite Element Analysis (FEA)** to solve complex design challenges, reduce costs, and accelerate the **product development** lifecycle. I thrive on interdisciplinary collaboration and delivering innovative, high-performance solutions.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Core Competencies</h2>
-            <ul class="skill-list">
-                <li>3D Printing (FDM/SLA)</li>
-                <li>**Mechanical Design**</li>
-                <li>**Innovation**</li>
-                <li>SolidWorks / CAD</li>
-                <li>FEA / Simulation</li>
-                <li>Design for Manufacturing (DFM)</li>
-                <li>Prototyping & Testing</li>
-                <li>Robotics / Automation</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-
-            <div class="project">
-                <h3>High-Efficiency Additive Manufacturing Tool</h3>
-                <p>
-                    **Role:** Lead Design & Prototyping Engineer
-                    <br>
-                    **Impact:** Reduced component weight by 35% and cut manufacturing lead time by 70% using 
-                    **FDM 3D Printing** techniques.
-                    <br>
-                    **Skills Used:** SolidWorks, DFM, Material Selection, Stress Analysis.
-                </p>
-                <a href="https://github.com/TKKiranKarthik/Portfolio/tree/main/project-1-link" class="project-link">View Project Details (GitHub)</a>
-            </div>
-
-            <div class="project">
-                <h3>Automated System Structural Optimization</h3>
-                <p>
-                    **Role:** Structural Analysis & Validation Specialist
-                    <br>
-                    **Impact:** Used **FEA Simulation** to identify and eliminate a critical failure point, resulting 
-                    in a 2X increase in the system's operational lifespan. Demonstrated **Problem-Solving** and rigorous engineering methodology.
-                    <br>
-                    **Skills Used:** ANSYS, GD&T, Mechanical Testing, Documentation.
-                </p>
-                <a href="https://github.com/TKKiranKarthik/Portfolio/tree/main/project-2-link" class="project-link">View Project Details (GitHub)</a>
-            </div>
-
-            <div class="project">
-                <h3>(Your Third Project Title Here)</h3>
-                <p>
-                    **Role:** (Your contribution)
-                    <br>
-                    **Impact:** (Quantifiable results of your work)
-                    <br>
-                    **Skills Used:** (Relevant software/techniques)
-                </p>
-                <a href="https://github.com/TKKiranKarthik/Portfolio/tree/main/project-3-link" class="project-link">View Project Details (GitHub)</a>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p style="text-align: center;">I am actively seeking opportunities where I can apply my skills in **Mechanical Design** and **Innovation**. Let's build something together.</p>
-            <p style="text-align: center;">
-                Email: <a href="mailto:your.email@example.com" style="color: #e8491d;">your.email@example.com</a>
-                <br>
-                LinkedIn: <a href="YOUR_LINKEDIN_URL" target="_blank" style="color: #e8491d;">/in/YourProfile</a>
-                <br>
-                GitHub: <a href="https://github.com/TKKiranKarthik" target="_blank" style="color: #e8491d;">/TKKiranKarthik</a>
-            </p>
-        </section>
-
-    </div>
-
-    <footer>
-        &copy; 2025 T. K. Kiran Karthik. All Rights Reserved.
-    </footer>
-
-</body>
-</html>
+            <h2>Welcome to my Portfolio!</h2>
+            <p style="text-align: center; max-width: 80
