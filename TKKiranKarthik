@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiran Karthik - Mechanical Engineer Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        header {
+            background: #2c3e50; /* Dark Blue - Professional Engineering look */
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid; /* A pop of contrast color */
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        .main-content {
+            padding: 30px 0;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        section {
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        section h2 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db; /* Blue accent */
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .skill-list li {
+            background: #3498db;
+            color: #fff;
+            margin: 5px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .skill-list li:hover {
+            background: #2980b9;
+        }
+        .project {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 5px solid #e8491d;
+        }
+        .project h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .project p strong {
+            color: #e8491d;
+        }
+        .project-link {
+            display: inline-block;
+            background: #2c3e50;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .project-link:hover {
+            background: #34495e;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #fff;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #e8491d;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: #c0392b;
+        }
+        /* Media Query for smaller screens */
+        @media(max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>T. K. KIRAN KARTHIK</h1>
+            <p>
+                **Mechanical Engineer** | Expert in **Additive Manufacturing** & **Product Innovation**
+            </p>
+            <a href="#contact" class="cta-button">LET'S CONNECT</a>
+        </div>
+    </header>
+
+    <div class="container main-content">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+                A highly driven Mechanical Engineer specializing in taking concepts from theoretical design to **manufacturable reality**. My passion lies in leveraging advanced tools like **3D Printing** and **Finite Element Analysis (FEA)** to solve complex design challenges, reduce costs, and accelerate the **product development** lifecycle. I thrive on interdisciplinary collaboration and delivering innovative, high-performance solutions.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Core Competencies</h2>
+            <ul class="skill-list">
+                <li>3D Printing (FDM/SLA)</li>
+                <li>**Mechanical Design**</li>
+                <li>**Innovation**</li>
+                <li>SolidWorks / CAD</li>
+                <li>FEA / Simulation</li>
+                <li>Design for Manufacturing (DFM)</li>
+                <li>Prototyping & Testing</li>
+                <li>Robotics / Automation</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="project">
+                <h3>High-Efficiency Additive Manufacturing Tool</h3>
+                <p>
+                    **Role:** Lead Design & Prototyping Engineer
+                    <br>
+                    **Impact:** Reduced component weight by 35% and cut manufacturing lead time by 70% using 
+                    **FDM 3D Printing** techniques.
+                    <br>
+                    **Skills Used:** SolidWorks, DFM, Material Selection, Stress Analysis.
+                </p>
+                <a href="https://github.com/TKKiranKarthik/Portfolio/tree/main/project-1-link" class="project-link">View Project Details (GitHub)</a>
+            </div>
+
+            <div class="project">
+                <h3>Automated System Structural Optimization</h3>
+                <p>
+                    **Role:** Structural Analysis & Validation Specialist
+                    <br>
+                    **Impact:** Used **FEA Simulation** to identify and eliminate a critical failure point, resulting 
+                    in a 2X increase in the system's operational lifespan. Demonstrated **Problem-Solving** and rigorous engineering methodology.
+                    <br>
+                    **Skills Used:** ANSYS, GD&T, Mechanical Testing, Documentation.
+                </p>
+                <a href="https://github.com/TKKiranKarthik/Portfolio/tree/main/project-2-link" class="project-link">View Project Details (GitHub)</a>
+            </div>
+
+            <div class="project">
+                <h3>(Your Third Project Title Here)</h3>
+                <p>
+                    **Role:** (Your contribution)
+                    <br>
+                    **Impact:** (Quantifiable results of your work)
+                    <br>
+                    **Skills Used:** (Relevant software/techniques)
+                </p>
+                <a href="https://github.com/TKKiranKarthik/Portfolio/tree/main/project-3-link" class="project-link">View Project Details (GitHub)</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p style="text-align: center;">I am actively seeking opportunities where I can apply my skills in **Mechanical Design** and **Innovation**. Let's build something together.</p>
+            <p style="text-align: center;">
+                Email: <a href="mailto:your.email@example.com" style="color: #e8491d;">your.email@example.com</a>
+                <br>
+                LinkedIn: <a href="YOUR_LINKEDIN_URL" target="_blank" style="color: #e8491d;">/in/YourProfile</a>
+                <br>
+                GitHub: <a href="https://github.com/TKKiranKarthik" target="_blank" style="color: #e8491d;">/TKKiranKarthik</a>
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2025 T. K. Kiran Karthik. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
