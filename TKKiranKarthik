@@ -1,151 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T. K. Kiran Karthik - Mechanical Engineer Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            width: 85%;
-            max-width: 1100px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-        header {
-            background: #2c3e50; /* Dark Blue - Professional Engineering look */
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid; /* A pop of contrast color */
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: 700;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        .main-content {
-            padding: 30px 0;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        section {
-            padding: 20px 0;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 20px;
-        }
-        section h2 {
-            text-align: center;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db; /* Blue accent */
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-left: 50%;
-            transform: translateX(-50%);
-        }
-        .skill-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .skill-list li {
-            background: #3498db;
-            color: #fff;
-            margin: 5px;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        .skill-list li:hover {
-            background: #2980b9;
-        }
-        .project {
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 5px solid #e8491d;
-        }
-        .project h3 {
-            color: #2c3e50;
-            margin-top: 0;
-        }
-        .project p strong {
-            color: #e8491d;
-        }
-        .project-link {
-            display: inline-block;
-            background: #2c3e50;
-            color: #fff;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .project-link:hover {
-            background: #34495e;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: #fff;
-        }
-        .cta-button {
-            display: inline-block;
-            background: #e8491d;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .cta-button:hover {
-            background: #c0392b;
-        }
-        /* Media Query for smaller screens */
-        @media(max-width: 600px) {
-            .container {
-                width: 95%;
-            }
-            header h1 {
-                font-size: 2em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiran Karthik — Mechanical Designer, Additive Manufacturing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2229;
+    --paper:#E9E6DD;
+    --paper-2:#DEDACC;
+    --navy:#1E2A38;
+    --navy-2:#263850;
+    --steel:#7C8792;
+    --steel-line:#B9BCB4;
+    --signal:#FF5A1F;
+    --blueprint:#7FAFB8;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.6;
+  }
+  a{color:inherit;}
+
+  /* ---------- layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns: 280px 1fr;
+    min-height:100vh;
+  }
+  @media (max-width:860px){
+    .shell{grid-template-columns:1fr;}
+  }
+
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    background:var(--navy);
+    color:var(--paper);
+    position:sticky;
+    top:0;
+    height:100vh;
+    padding:44px 32px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  @media (max-width:860px){
+    .sidebar{
+      position:relative;
+      height:auto;
+      padding:28px 24px;
+    }
+  }
+  .brand h1{
+    font-family:var(--display);
+    font-size:1.55rem;
+    line-height:1.15;
+    margin:0 0 6px;
+    font-weight:700;
+    letter-spacing:0.01em;
+  }
+  .brand .role{
+    font-size:0.86rem;
+    color:var(--blueprint);
+    font-family:var(--mono);
+    margin:0 0 28px;
+  }
+  .ruler-nav{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-left:1px solid rgba(233,230,221,0.25);
+  }
+  .ruler-nav li{position:relative;}
+  .ruler-nav a{
+    display:block;
+    padding:10px 0 10px 22px;
+    text-decoration:none;
+    font-size:0.92rem;
+    color:rgba(233,230,221,0.7);
+    transition:color .2s;
+  }
+  .ruler-nav a:hover{color:var(--paper);}
+  .ruler-nav li::before{
+    content:"";
+    position:absolute;
+    left:-1px;
+    top:18px;
+    width:12px;
+    height:1px;
+    background:rgba(233,230,221,0.35);
+  }
+  .ruler-nav a.active{color:var(--signal);}
+  .ruler-nav li.active::before{background:var(--signal); width:16px; height:2px;}
+
+  .sidebar-foot{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--steel);
+    letter-spacing:0.02em;
+  }
+  @media (max-width:860px){ .sidebar-foot{display:none;} }
+
+  /* ---------- main ---------- */
+  main{padding:0;}
+  .hero{
+    padding:76px 56px 56px;
+    border-bottom:1px solid var(--steel-line);
+  }
+  @media (max-width:860px){ .hero{padding:48px 24px 36px;} }
+  .stamp{
+    width:64px;height:64px;border-radius:50%;
+    border:2px solid var(--signal);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:1.1rem;
+    color:var(--signal);
+    transform:rotate(-8deg);
+    margin-bottom:24px;
+  }
+  .hero h2{
+    font-family:var(--display);
+    font-size:clamp(1.9rem, 4vw, 2.9rem);
+    line-height:1.15;
+    max-width:15ch;
+    margin:0 0 18px;
+    font-weight:600;
+  }
+  .hero p.lede{
+    max-width:56ch;
+    font-size:1.05rem;
+    color:#3A4148;
+    margin:0 0 26px;
+  }
+  .hero .quickfacts{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:0.82rem;
+    color:var(--steel);
+  }
+  .hero .quickfacts b{color:var(--ink); font-weight:600;}
+
+  section{
+    padding:52px 56px;
+    border-bottom:1px solid var(--steel-line);
+  }
+  @media (max-width:860px){ section{padding:36px 24px;} }
+
+  .dim-label{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:0 0 30px;
+  }
+  .dim-label .tick{
+    width:22px;height:1px;background:var(--steel);
+    position:relative;
+  }
+  .dim-label .tick::before,.dim-label .tick::after{
+    content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--steel);
+  }
+  .dim-label .tick::before{left:0;}
+  .dim-label .tick::after{right:0;}
+  .dim-label h3{
+    font-family:var(--display);
+    font-size:1.25rem;
+    margin:0;
+    font-weight:600;
+  }
+
+  /* ---------- timeline (experience + education merged, real chronology) ---------- */
+  .timeline{
+    position:relative;
+    padding-left:26px;
+    border-left:2px solid var(--paper-2);
+  }
+  .t-item{
+    position:relative;
+    padding-bottom:34px;
+  }
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-32px;
+    top:4px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--navy);
+    border:2px solid var(--signal);
+  }
+  .t-item .when{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--steel);
+    display:block;
+    margin-bottom:4px;
+  }
+  .t-item h4{
+    font-family:var(--display);
+    font-size:1.05rem;
+    margin:0 0 4px;
+    font-weight:600;
+  }
+  .t-item .org{
+    font-size:0.88rem;
+    color:var(--steel);
+    margin:0 0 10px;
+  }
+  .t-item ul{
+    margin:0;
+    padding-left:18px;
+  }
+  .t-item li{margin-bottom:6px; font-size:0.95rem;}
+
+  /* ---------- skills, grouped not soup ---------- */
+  .skill-row{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:18px;
+    padding:14px 0;
+    border-top:1px solid var(--paper-2);
+    align-items:baseline;
+  }
+  .skill-row:first-of-type{border-top:none;}
+  .skill-row .cat{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--steel);
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    border:1px solid var(--steel-line);
+    padding:6px 12px;
+    font-size:0.86rem;
+    background:transparent;
+    transition:background .2s, color .2s, border-color .2s;
+  }
+  .chip:hover{background:var(--signal); border-color:var(--signal); color:var(--paper);}
+
+  /* ---------- academic projects ---------- */
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+  }
+  .proj{
+    border-left:3px solid var(--blueprint);
+    padding:4px 0 4px 18px;
+  }
+  .proj h4{
+    font-family:var(--display);
+    font-size:1rem;
+    margin:0 0 8px;
+    font-weight:600;
+    text-transform:none;
+  }
+  .proj p{margin:0; font-size:0.92rem; color:#3A4148;}
+
+  /* ---------- contact / spec sheet ---------- */
+  .spec{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1px;
+    background:var(--paper-2);
+    border:1px solid var(--paper-2);
+  }
+  .spec div{
+    background:var(--paper);
+    padding:18px 20px;
+  }
+  .spec .k{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--steel);
+    margin-bottom:6px;
+  }
+  .spec .v{font-size:0.98rem;}
+  .spec .v a{text-decoration:none; border-bottom:1px solid var(--signal);}
+
+  footer{
+    padding:26px 56px;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--steel);
+  }
+  @media (max-width:860px){ footer{padding:20px 24px;} }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>T. K. KIRAN KARTHIK</h1>
-            <p>
-                **Mechanical Engineer** | **Designer** | **3D Printing Specialist**
-            </p>
-            <a href="#contact" class="cta-button">LET'S CONNECT</a>
+<div class="shell">
+  <aside class="sidebar">
+    <div>
+      <div class="brand">
+        <h1>Kiran<br>Karthik</h1>
+        <p class="role">Mechanical Designer /<br>Additive Manufacturing</p>
+      </div>
+      <ul class="ruler-nav" id="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Academic projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-foot">Bengaluru, Karnataka<br>KEDARAM · PARASSALA P.O</div>
+  </aside>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="stamp">KK</div>
+      <h2>Designing what gets printed, not just what gets drawn.</h2>
+      <p class="lede">Senior Designer and Head of Operations at DF3D Creations, running design-to-manufacture for SLA and FDM production. Three-plus years turning client concepts into parts that actually print, assemble, and ship — over 250 commissions and counting.</p>
+      <div class="quickfacts">
+        <span><b>3+ yrs</b> in production design</span>
+        <span><b>250+</b> client commissions delivered</span>
+        <span><b>M.Tech</b> Manufacturing &amp; Automation</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="dim-label"><span class="tick"></span><h3>Experience &amp; education</h3></div>
+      <div class="timeline">
+        <div class="t-item">
+          <span class="when">OCT 2022 — PRESENT</span>
+          <h4>Senior Designer &amp; Head of Operations</h4>
+          <p class="org">DF3D Creations Pvt Ltd, Bengaluru</p>
+          <ul>
+            <li>Managed the full design-to-manufacture process for 250+ client commissions, from design approval through 3D printing to final dispatch.</li>
+            <li>Used industry-standard 3D surface modeling and sculpting software for complex geometry, handling engineering, assemblies, and final print-file preparation.</li>
+            <li>Managed and optimized a fleet of SLA and FDM printers, cutting downtime through proactive troubleshooting and preventive maintenance.</li>
+            <li>Ran virtual planning sessions with clients to align on complex design concepts before production.</li>
+            <li>Supervised post-processing and supported assembly and QA to protect final product quality and delivery timing.</li>
+          </ul>
         </div>
-    </header>
+        <div class="t-item">
+          <span class="when">DEC 2020 — JUL 2022</span>
+          <h4>M.Tech, Manufacturing and Automation</h4>
+          <p class="org">College of Engineering Trivandrum</p>
+        </div>
+        <div class="t-item">
+          <span class="when">JUL 2016 — SEP 2020</span>
+          <h4>B.Tech, Mechanical Engineering</h4>
+          <p class="org">Sarabhai Institute of Science and Technology, Vellanad</p>
+        </div>
+        <div class="t-item">
+          <span class="when">STUDENT INTERNSHIPS</span>
+          <h4>Coach Depot, Southern Railway · TPLC Trivandrum</h4>
+          <p class="org">Thampanoor / Trivandrum</p>
+        </div>
+        <div class="t-item">
+          <span class="when">2013 — 2016</span>
+          <h4>Plus Two &amp; Tenth Grade</h4>
+          <p class="org">Sree Chithira Thirunal Residential Central School, Kunnathukal</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="container main-content">
+    <section id="skills">
+      <div class="dim-label"><span class="tick"></span><h3>Skills</h3></div>
+      <div class="skill-row">
+        <span class="cat">CAD / 3D MODELING</span>
+        <div class="chips">
+          <span class="chip">SolidWorks</span><span class="chip">Rhinoceros 3D</span>
+          <span class="chip">AutoCAD</span><span class="chip">Solid Edge</span>
+          <span class="chip">ZBrush</span><span class="chip">Siemens NX</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="cat">MANUFACTURING</span>
+        <div class="chips">
+          <span class="chip">3D Printing (SLA &amp; FDM)</span><span class="chip">Production Management</span>
+          <span class="chip">Assembly</span><span class="chip">Design for Manufacturing (DFM)</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="cat">ANALYSIS</span>
+        <div class="chips">
+          <span class="chip">Critical Thinking</span><span class="chip">Problem-Solving</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="cat">LANGUAGES</span>
+        <div class="chips">
+          <span class="chip">English</span><span class="chip">Malayalam</span>
+          <span class="chip">Kannada</span><span class="chip">Tamil</span>
+        </div>
+      </div>
+    </section>
 
-        <section id="about">
-            <h2>Welcome to my Portfolio!</h2>
-            <p style="text-align: center; max-width: 80
+    <section id="projects">
+      <div class="dim-label"><span class="tick"></span><h3>Academic projects</h3></div>
+      <div class="proj-grid">
+        <div class="proj">
+          <h4>Metallurgical, mechanical &amp; tribological study of A390/SiC composite</h4>
+          <p>Investigated wear behavior of an A390/silicon-carbide composite, fabricated by stir casting, tested on a pin-on-disc tribometer across loads and speeds, with tensile and hardness testing in as-cast and heat-treated conditions.</p>
+        </div>
+        <div class="proj">
+          <h4>Design &amp; fabrication of a dual-extrusion 3D printer</h4>
+          <p>Designed and built a custom 3D printer with dual extrusion feeding through a single nozzle.</p>
+        </div>
+        <div class="proj">
+          <h4>Turning weeds into value-added products</h4>
+          <p>Explored converting local weeds into value-added products; findings presented at ICITST-2018.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="dim-label"><span class="tick"></span><h3>Contact</h3></div>
+      <div class="spec">
+        <div><span class="k">PHONE</span><span class="v">+91 80759 91218</span></div>
+        <div><span class="k">EMAIL</span><span class="v"><a href="mailto:tkkirankarthik@gmail.com">tkkirankarthik@gmail.com</a></span></div>
+        <div><span class="k">LINKEDIN</span><span class="v"><a href="https://linkedin.com/in/t-k-kiran-karthik/" target="_blank" rel="noopener">t-k-kiran-karthik</a></span></div>
+        <div><span class="k">LOCATION</span><span class="v">Kedaram, Parassala P.O 695502</span></div>
+      </div>
+    </section>
+
+    <footer>&copy; <span id="year"></span> T. K. Kiran Karthik</footer>
+  </main>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const links = document.querySelectorAll('.ruler-nav a');
+  const targets = [...links].map(a => document.querySelector(a.getAttribute('href')));
+
+  const setActive = () => {
+    let idx = 0;
+    const pos = window.scrollY + 120;
+    targets.forEach((t,i) => { if (t && t.offsetTop <= pos) idx = i; });
+    links.forEach((a,i) => {
+      a.classList.toggle('active', i === idx);
+      a.parentElement.classList.toggle('active', i === idx);
+    });
+  };
+  document.addEventListener('scroll', setActive);
+  setActive();
+</script>
+
+</body>
+</html>
