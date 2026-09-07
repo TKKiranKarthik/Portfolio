@@ -1,41 +1,525 @@
-# T K Kiran Karthik   
-**Mechanical Engineer | Designer | 3D Printing Specialist**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiran Karthik — Mechanical Designer, Additive Manufacturing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2229;
+    --paper:#E9E6DD;
+    --paper-2:#DEDACC;
+    --navy:#1E2A38;
+    --navy-2:#263850;
+    --steel:#7C8792;
+    --steel-line:#B9BCB4;
+    --signal:#FF5A1F;
+    --blueprint:#7FAFB8;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.6;
+  }
+  a{color:inherit;}
 
-Welcome to my portfolio! I am a mechanical engineer with expertise in manufacturing, 3D printing, and CAD design. This portfolio showcases my work and skills in engineering and design.
+  /* ---------- layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns: 280px 1fr;
+    min-height:100vh;
+  }
+  @media (max-width:860px){
+    .shell{grid-template-columns:1fr;}
+  }
 
----
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    background:var(--navy);
+    color:var(--paper);
+    position:sticky;
+    top:0;
+    height:100vh;
+    padding:44px 32px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  @media (max-width:860px){
+    .sidebar{
+      position:relative;
+      height:auto;
+      padding:28px 24px;
+    }
+  }
+  .brand h1{
+    font-family:var(--display);
+    font-size:1.55rem;
+    line-height:1.15;
+    margin:0 0 6px;
+    font-weight:700;
+    letter-spacing:0.01em;
+  }
+  .brand .role{
+    font-size:0.86rem;
+    color:var(--blueprint);
+    font-family:var(--mono);
+    margin:0 0 28px;
+  }
+  .ruler-nav{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-left:1px solid rgba(233,230,221,0.25);
+  }
+  .ruler-nav li{position:relative;}
+  .ruler-nav a{
+    display:block;
+    padding:10px 0 10px 22px;
+    text-decoration:none;
+    font-size:0.92rem;
+    color:rgba(233,230,221,0.7);
+    transition:color .2s;
+  }
+  .ruler-nav a:hover{color:var(--paper);}
+  .ruler-nav li::before{
+    content:"";
+    position:absolute;
+    left:-1px;
+    top:18px;
+    width:12px;
+    height:1px;
+    background:rgba(233,230,221,0.35);
+  }
+  .ruler-nav a.active{color:var(--signal);}
+  .ruler-nav li.active::before{background:var(--signal); width:16px; height:2px;}
 
-## 🔧 Skills  
-- **CAD Design**: Proficient in SolidWorks, Solid Edge, Rhino 8, and .  
-- **3D Printing**: Experience with FDM, SLA, and SLS printers for prototyping and manufacturing.  
-- **Manufacturing Processes**: Experience in casting, heat treatment.  .  
-- **Programming**: G-code customization (Beginner Level.
+  .sidebar-foot{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--steel);
+    letter-spacing:0.02em;
+  }
+  @media (max-width:860px){ .sidebar-foot{display:none;} }
 
----
+  /* ---------- main ---------- */
+  main{padding:0;}
+  .hero{
+    padding:76px 56px 56px;
+    border-bottom:1px solid var(--steel-line);
+  }
+  @media (max-width:860px){ .hero{padding:48px 24px 36px;} }
+  .stamp{
+    width:64px;height:64px;border-radius:50%;
+    border:2px solid var(--signal);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:1.1rem;
+    color:var(--signal);
+    transform:rotate(-8deg);
+    margin-bottom:24px;
+  }
+  .hero h2{
+    font-family:var(--display);
+    font-size:clamp(1.9rem, 4vw, 2.9rem);
+    line-height:1.15;
+    max-width:15ch;
+    margin:0 0 18px;
+    font-weight:600;
+  }
+  .hero p.lede{
+    max-width:56ch;
+    font-size:1.05rem;
+    color:#3A4148;
+    margin:0 0 26px;
+  }
+  .hero .quickfacts{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:0.82rem;
+    color:var(--steel);
+  }
+  .hero .quickfacts b{color:var(--ink); font-weight:600;}
 
-## 🛠️ Projects  
+  section{
+    padding:52px 56px;
+    border-bottom:1px solid var(--steel-line);
+  }
+  @media (max-width:860px){ section{padding:36px 24px;} }
 
-### 1. **Design and Fabrication of 3D printer**  
-**Description**: A 3d printer was designed and fabricated with double extrusion
- capabilities with a single nozzle output.  
-- **Tools Used**: Solid Works, Solid Edge Cura Slicer.  
+  .dim-label{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:0 0 30px;
+  }
+  .dim-label .tick{
+    width:22px;height:1px;background:var(--steel);
+    position:relative;
+  }
+  .dim-label .tick::before,.dim-label .tick::after{
+    content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--steel);
+  }
+  .dim-label .tick::before{left:0;}
+  .dim-label .tick::after{right:0;}
+  .dim-label h3{
+    font-family:var(--display);
+    font-size:1.25rem;
+    margin:0;
+    font-weight:600;
+  }
 
+  /* ---------- timeline (experience + education merged, real chronology) ---------- */
+  .timeline{
+    position:relative;
+    padding-left:26px;
+    border-left:2px solid var(--paper-2);
+  }
+  .t-item{
+    position:relative;
+    padding-bottom:34px;
+  }
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-32px;
+    top:4px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--navy);
+    border:2px solid var(--signal);
+  }
+  .t-item .when{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--steel);
+    display:block;
+    margin-bottom:4px;
+  }
+  .t-item h4{
+    font-family:var(--display);
+    font-size:1.05rem;
+    margin:0 0 4px;
+    font-weight:600;
+  }
+  .t-item .org{
+    font-size:0.88rem;
+    color:var(--steel);
+    margin:0 0 10px;
+  }
+  .t-item ul{
+    margin:0;
+    padding-left:18px;
+  }
+  .t-item li{margin-bottom:6px; font-size:0.95rem;}
 
-### 2. **Study on Metallurgical, Mechanical and Tribological Characteristics of A390/(0,10) wt% SiC Composite**  
-**Description**:  A390 offer high, wear resistance on the surface of the piece and toughness high specific rigidity and adequate resistance to corrosion.
-A390 is selected as it has good hardness due to its higher silicon percentage and is a hyper eutectic alloy. Silicon carbide (SiC) is a lightweight ceramic material with high strength properties comparable to diamond. It has excellent thermal conductivity, low thermal expansion, and is resistant to corrosion from acids. 
-Silicon carbide is an excellent ceramic material for applications requiring good erosion, high temperature resistance and abrasive resistance.
-The composite is made by stir casting with Aluminium alloy A390 and Silicon Carbide and its wear is tested on pin on disc tribometer at different loads and multiple speeds and to find the mechanical properties of the cast composite.
-The weight between each successive tests are noted and the weight loss is calculated. 
-The weight loss is used to find the wear rate. The tensile test and hardness of the A390 and composite in as cast as well as at heat treated condition is tested.  
-- **Highlights**:  
-  - Improved material hardness, reduced material wear.  
+  /* ---------- skills, grouped not soup ---------- */
+  .skill-row{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:18px;
+    padding:14px 0;
+    border-top:1px solid var(--paper-2);
+    align-items:baseline;
+  }
+  .skill-row:first-of-type{border-top:none;}
+  .skill-row .cat{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--steel);
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    border:1px solid var(--steel-line);
+    padding:6px 12px;
+    font-size:0.86rem;
+    background:transparent;
+    transition:background .2s, color .2s, border-color .2s;
+  }
+  .chip:hover{background:var(--signal); border-color:var(--signal); color:var(--paper);}
+  .lang-chip{cursor:pointer; font-family:var(--body); appearance:none;}
+  .lang-chip.active{background:var(--navy); border-color:var(--navy); color:var(--paper);}
+  .lang-detail{
+    margin-top:16px;
+    padding:14px 16px;
+    background:var(--paper-2);
+    display:flex;
+    align-items:center;
+    gap:14px;
+    max-width:420px;
+  }
+  .lang-detail-name{font-family:var(--display); font-weight:600; font-size:0.92rem; min-width:88px;}
+  .lang-bar{
+    flex:1;
+    height:8px;
+    background:#c9c5b7;
+    position:relative;
+  }
+  .lang-bar-fill{
+    height:100%;
+    background:var(--signal);
+    width:0%;
+    transition:width .35s ease;
+  }
+  .lang-detail-level{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    color:var(--steel);
+    min-width:110px;
+    text-align:right;
+  }
 
----
+  /* ---------- academic projects ---------- */
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+  }
+  .proj{
+    border-left:3px solid var(--blueprint);
+    padding:4px 0 4px 18px;
+  }
+  .proj h4{
+    font-family:var(--display);
+    font-size:1rem;
+    margin:0 0 8px;
+    font-weight:600;
+    text-transform:none;
+  }
+  .proj p{margin:0; font-size:0.92rem; color:#3A4148;}
 
-## 📞 Contact  
-- **LinkedIn**: [linkedin.com/in/your-profile](https://www.linkedin.com/in/t-k-kiran-karthik/)  
-- **GitHub**: [github.com/your-username](https://github.com/your-username)  
-- **Email**: [tkkirankarthik@gmail.com](mailto:your-email@example.com)  
+  /* ---------- contact / spec sheet ---------- */
+  .spec{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1px;
+    background:var(--paper-2);
+    border:1px solid var(--paper-2);
+  }
+  .spec div{
+    background:var(--paper);
+    padding:18px 20px;
+  }
+  .spec .k{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--steel);
+    margin-bottom:6px;
+  }
+  .spec .v{font-size:0.98rem;}
+  .spec .v a{text-decoration:none; border-bottom:1px solid var(--signal);}
 
----
+  footer{
+    padding:26px 56px;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--steel);
+  }
+  @media (max-width:860px){ footer{padding:20px 24px;} }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div>
+      <div class="brand">
+        <h1>T K Kiran<br>Karthik</h1>
+        <p class="role">Mechanical Design Engineer |<br>Product Design &amp; Additive<br>Manufacturing (FDM) |<br>Manufacturing &amp; Automation</p>
+      </div>
+      <ul class="ruler-nav" id="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Academic projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-foot">Bengaluru, Karnataka<br>KEDARAM · PARASSALA P.O</div>
+  </aside>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="stamp">KK</div>
+      <h2>Designing what gets printed, not just what gets rendered on screen.</h2>
+      <p class="lede">Senior Designer and Head of Operations at DF3D Creations, running design-to-manufacture for SLA and FDM production. Four years turning client concepts into parts that actually print, assemble, and ship — over 250 commissions and counting.</p>
+      <div class="quickfacts">
+        <span><b>4 yrs</b> in production design</span>
+        <span><b>250+</b> client commissions delivered</span>
+        <span><b>M.Tech</b> Manufacturing &amp; Automation</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="dim-label"><span class="tick"></span><h3>Experience &amp; education</h3></div>
+      <div class="timeline">
+        <div class="t-item">
+          <span class="when">OCT 2022 — PRESENT</span>
+          <h4>Senior Designer &amp; Head of Operations</h4>
+          <p class="org">DF3D Creations Pvt Ltd, Bengaluru</p>
+          <ul>
+            <li>Managed the full design-to-manufacture process for 250+ client commissions, applying Design for Manufacturing (DFM) principles from design approval through 3D printing to final dispatch.</li>
+            <li>Applied design engineering and Geometric Dimensioning &amp; Tolerancing (GD&amp;T) to industry-standard 3D surface modeling and sculpting for complex geometry, handling assemblies and final print-file preparation.</li>
+            <li>Managed and optimized a fleet of SLA and FDM 3D printing equipment, cutting downtime through proactive troubleshooting and preventive maintenance.</li>
+            <li>Used problem solving in virtual planning sessions with clients to align on complex design concepts before production.</li>
+            <li>Supervised post-processing and led quality management across assembly and QA to protect final product quality and delivery timing.</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <span class="when">DEC 2020 — JUL 2022</span>
+          <h4>M.Tech, Manufacturing and Automation</h4>
+          <p class="org">College of Engineering Trivandrum</p>
+        </div>
+        <div class="t-item">
+          <span class="when">JUL 2016 — SEP 2020</span>
+          <h4>B.Tech, Mechanical Engineering</h4>
+          <p class="org">Sarabhai Institute of Science and Technology, Vellanad</p>
+        </div>
+        <div class="t-item">
+          <span class="when">STUDENT INTERNSHIPS</span>
+          <h4>Coach Depot, Southern Railway · TPLC Trivandrum</h4>
+          <p class="org">Thampanoor / Trivandrum</p>
+        </div>
+        <div class="t-item">
+          <span class="when">2013 — 2016</span>
+          <h4>Plus Two &amp; Tenth Grade</h4>
+          <p class="org">Sree Chithira Thirunal Residential Central School, Kunnathukal</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="dim-label"><span class="tick"></span><h3>Skills</h3></div>
+      <div class="skill-row">
+        <span class="cat">CAD / 3D MODELING</span>
+        <div class="chips">
+          <span class="chip">SolidWorks</span><span class="chip">Rhinoceros 3D</span>
+          <span class="chip">AutoCAD</span><span class="chip">Solid Edge</span>
+          <span class="chip">ZBrush</span><span class="chip">Siemens NX</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="cat">MANUFACTURING</span>
+        <div class="chips">
+          <span class="chip">3D Printing (SLA &amp; FDM)</span><span class="chip">Production Management</span>
+          <span class="chip">Assembly</span><span class="chip">Design for Manufacturing (DFM)</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="cat">ANALYSIS</span>
+        <div class="chips">
+          <span class="chip">Critical Thinking</span><span class="chip">Problem-Solving</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="cat">LANGUAGES</span>
+        <div>
+          <div class="chips" id="langChips">
+            <button type="button" class="chip lang-chip" data-name="English" data-level="Fluent" data-pct="90">English</button>
+            <button type="button" class="chip lang-chip" data-name="Malayalam" data-level="Native" data-pct="95">Malayalam</button>
+            <button type="button" class="chip lang-chip" data-name="Kannada" data-level="Conversational" data-pct="45">Kannada</button>
+            <button type="button" class="chip lang-chip" data-name="Tamil" data-level="Conversational" data-pct="45">Tamil</button>
+          </div>
+          <div class="lang-detail" id="langDetail" hidden>
+            <span class="lang-detail-name" id="langDetailName"></span>
+            <div class="lang-bar"><div class="lang-bar-fill" id="langDetailFill"></div></div>
+            <span class="lang-detail-level" id="langDetailLevel"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="dim-label"><span class="tick"></span><h3>Academic projects</h3></div>
+      <div class="proj-grid">
+        <div class="proj">
+          <h4>Metallurgical, mechanical &amp; tribological study of A390/SiC composite</h4>
+          <p>Investigated wear behavior of an A390/silicon-carbide composite, fabricated by stir casting, tested on a pin-on-disc tribometer across loads and speeds, with tensile and hardness testing in as-cast and heat-treated conditions.</p>
+        </div>
+        <div class="proj">
+          <h4>Design &amp; fabrication of a dual-extrusion 3D printer</h4>
+          <p>Designed and built a custom 3D printer with dual extrusion feeding through a single nozzle.</p>
+        </div>
+        <div class="proj">
+          <h4>Turning weeds into value-added products</h4>
+          <p>Explored converting local weeds into value-added products; findings presented at ICITST-2018.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="dim-label"><span class="tick"></span><h3>Contact</h3></div>
+      <div class="spec">
+        <div><span class="k">PHONE</span><span class="v">+91 80759 91218</span></div>
+        <div><span class="k">EMAIL</span><span class="v"><a href="mailto:tkkirankarthik@gmail.com">tkkirankarthik@gmail.com</a></span></div>
+        <div><span class="k">LINKEDIN</span><span class="v"><a href="https://linkedin.com/in/t-k-kiran-karthik/" target="_blank" rel="noopener">t-k-kiran-karthik</a></span></div>
+        <div><span class="k">LOCATION</span><span class="v">Bengaluru, Karnataka <span style="color:var(--steel); font-size:0.85em;">(native: Kedaram, Parassala P.O 695502)</span></span></div>
+      </div>
+    </section>
+
+    <footer>&copy; <span id="year"></span> T. K. Kiran Karthik</footer>
+  </main>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const links = document.querySelectorAll('.ruler-nav a');
+  const targets = [...links].map(a => document.querySelector(a.getAttribute('href')));
+
+  const setActive = () => {
+    let idx = 0;
+    const pos = window.scrollY + 120;
+    targets.forEach((t,i) => { if (t && t.offsetTop <= pos) idx = i; });
+    links.forEach((a,i) => {
+      a.classList.toggle('active', i === idx);
+      a.parentElement.classList.toggle('active', i === idx);
+    });
+  };
+  document.addEventListener('scroll', setActive);
+  setActive();
+
+  const langChips = document.querySelectorAll('.lang-chip');
+  const langDetail = document.getElementById('langDetail');
+  const langDetailName = document.getElementById('langDetailName');
+  const langDetailFill = document.getElementById('langDetailFill');
+  const langDetailLevel = document.getElementById('langDetailLevel');
+  let activeLangChip = null;
+
+  langChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (activeLangChip === chip) {
+        chip.classList.remove('active');
+        langDetail.hidden = true;
+        activeLangChip = null;
+        return;
+      }
+      if (activeLangChip) activeLangChip.classList.remove('active');
+      chip.classList.add('active');
+      activeLangChip = chip;
+      langDetail.hidden = false;
+      langDetailName.textContent = chip.dataset.name;
+      langDetailLevel.textContent = chip.dataset.level;
+      langDetailFill.style.width = '0%';
+      requestAnimationFrame(() => { langDetailFill.style.width = chip.dataset.pct + '%'; });
+    });
+  });
+</script>
+
+</body>
+</html>
