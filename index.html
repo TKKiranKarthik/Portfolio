@@ -251,6 +251,37 @@
     transition:background .2s, color .2s, border-color .2s;
   }
   .chip:hover{background:var(--signal); border-color:var(--signal); color:var(--paper);}
+  .lang-chip{cursor:pointer; font-family:var(--body); appearance:none;}
+  .lang-chip.active{background:var(--navy); border-color:var(--navy); color:var(--paper);}
+  .lang-detail{
+    margin-top:16px;
+    padding:14px 16px;
+    background:var(--paper-2);
+    display:flex;
+    align-items:center;
+    gap:14px;
+    max-width:420px;
+  }
+  .lang-detail-name{font-family:var(--display); font-weight:600; font-size:0.92rem; min-width:88px;}
+  .lang-bar{
+    flex:1;
+    height:8px;
+    background:#c9c5b7;
+    position:relative;
+  }
+  .lang-bar-fill{
+    height:100%;
+    background:var(--signal);
+    width:0%;
+    transition:width .35s ease;
+  }
+  .lang-detail-level{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    color:var(--steel);
+    min-width:110px;
+    text-align:right;
+  }
 
   /* ---------- academic projects ---------- */
   .proj-grid{
@@ -308,8 +339,8 @@
   <aside class="sidebar">
     <div>
       <div class="brand">
-        <h1>Kiran<br>Karthik</h1>
-        <p class="role">Mechanical Designer /<br>Additive Manufacturing</p>
+        <h1>T K Kiran<br>Karthik</h1>
+        <p class="role">Mechanical Design Engineer |<br>Product Design &amp; Additive<br>Manufacturing (FDM) |<br>Manufacturing &amp; Automation</p>
       </div>
       <ul class="ruler-nav" id="nav">
         <li><a href="#about">About</a></li>
@@ -325,10 +356,10 @@
   <main>
     <section class="hero" id="about">
       <div class="stamp">KK</div>
-      <h2>Designing what gets printed, not just what gets drawn.</h2>
-      <p class="lede">Senior Designer and Head of Operations at DF3D Creations, running design-to-manufacture for SLA and FDM production. Three-plus years turning client concepts into parts that actually print, assemble, and ship — over 250 commissions and counting.</p>
+      <h2>Designing what gets printed, not just what gets rendered on screen.</h2>
+      <p class="lede">Senior Designer and Head of Operations at DF3D Creations, running design-to-manufacture for SLA and FDM production. Four years turning client concepts into parts that actually print, assemble, and ship — over 250 commissions and counting.</p>
       <div class="quickfacts">
-        <span><b>3+ yrs</b> in production design</span>
+        <span><b>4 yrs</b> in production design</span>
         <span><b>250+</b> client commissions delivered</span>
         <span><b>M.Tech</b> Manufacturing &amp; Automation</span>
       </div>
@@ -342,11 +373,11 @@
           <h4>Senior Designer &amp; Head of Operations</h4>
           <p class="org">DF3D Creations Pvt Ltd, Bengaluru</p>
           <ul>
-            <li>Managed the full design-to-manufacture process for 250+ client commissions, from design approval through 3D printing to final dispatch.</li>
-            <li>Used industry-standard 3D surface modeling and sculpting software for complex geometry, handling engineering, assemblies, and final print-file preparation.</li>
-            <li>Managed and optimized a fleet of SLA and FDM printers, cutting downtime through proactive troubleshooting and preventive maintenance.</li>
-            <li>Ran virtual planning sessions with clients to align on complex design concepts before production.</li>
-            <li>Supervised post-processing and supported assembly and QA to protect final product quality and delivery timing.</li>
+            <li>Managed the full design-to-manufacture process for 250+ client commissions, applying Design for Manufacturing (DFM) principles from design approval through 3D printing to final dispatch.</li>
+            <li>Applied design engineering and Geometric Dimensioning &amp; Tolerancing (GD&amp;T) to industry-standard 3D surface modeling and sculpting for complex geometry, handling assemblies and final print-file preparation.</li>
+            <li>Managed and optimized a fleet of SLA and FDM 3D printing equipment, cutting downtime through proactive troubleshooting and preventive maintenance.</li>
+            <li>Used problem solving in virtual planning sessions with clients to align on complex design concepts before production.</li>
+            <li>Supervised post-processing and led quality management across assembly and QA to protect final product quality and delivery timing.</li>
           </ul>
         </div>
         <div class="t-item">
@@ -397,9 +428,18 @@
       </div>
       <div class="skill-row">
         <span class="cat">LANGUAGES</span>
-        <div class="chips">
-          <span class="chip">English</span><span class="chip">Malayalam</span>
-          <span class="chip">Kannada</span><span class="chip">Tamil</span>
+        <div>
+          <div class="chips" id="langChips">
+            <button type="button" class="chip lang-chip" data-name="English" data-level="Fluent" data-pct="90">English</button>
+            <button type="button" class="chip lang-chip" data-name="Malayalam" data-level="Native" data-pct="95">Malayalam</button>
+            <button type="button" class="chip lang-chip" data-name="Kannada" data-level="Conversational" data-pct="45">Kannada</button>
+            <button type="button" class="chip lang-chip" data-name="Tamil" data-level="Conversational" data-pct="45">Tamil</button>
+          </div>
+          <div class="lang-detail" id="langDetail" hidden>
+            <span class="lang-detail-name" id="langDetailName"></span>
+            <div class="lang-bar"><div class="lang-bar-fill" id="langDetailFill"></div></div>
+            <span class="lang-detail-level" id="langDetailLevel"></span>
+          </div>
         </div>
       </div>
     </section>
@@ -428,7 +468,7 @@
         <div><span class="k">PHONE</span><span class="v">+91 80759 91218</span></div>
         <div><span class="k">EMAIL</span><span class="v"><a href="mailto:tkkirankarthik@gmail.com">tkkirankarthik@gmail.com</a></span></div>
         <div><span class="k">LINKEDIN</span><span class="v"><a href="https://linkedin.com/in/t-k-kiran-karthik/" target="_blank" rel="noopener">t-k-kiran-karthik</a></span></div>
-        <div><span class="k">LOCATION</span><span class="v">Kedaram, Parassala P.O 695502</span></div>
+        <div><span class="k">LOCATION</span><span class="v">Bengaluru, Karnataka <span style="color:var(--steel); font-size:0.85em;">(native: Kedaram, Parassala P.O 695502)</span></span></div>
       </div>
     </section>
 
@@ -453,6 +493,32 @@
   };
   document.addEventListener('scroll', setActive);
   setActive();
+
+  const langChips = document.querySelectorAll('.lang-chip');
+  const langDetail = document.getElementById('langDetail');
+  const langDetailName = document.getElementById('langDetailName');
+  const langDetailFill = document.getElementById('langDetailFill');
+  const langDetailLevel = document.getElementById('langDetailLevel');
+  let activeLangChip = null;
+
+  langChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (activeLangChip === chip) {
+        chip.classList.remove('active');
+        langDetail.hidden = true;
+        activeLangChip = null;
+        return;
+      }
+      if (activeLangChip) activeLangChip.classList.remove('active');
+      chip.classList.add('active');
+      activeLangChip = chip;
+      langDetail.hidden = false;
+      langDetailName.textContent = chip.dataset.name;
+      langDetailLevel.textContent = chip.dataset.level;
+      langDetailFill.style.width = '0%';
+      requestAnimationFrame(() => { langDetailFill.style.width = chip.dataset.pct + '%'; });
+    });
+  });
 </script>
 
 </body>
